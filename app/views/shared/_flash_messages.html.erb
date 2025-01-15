@@ -1,5 +1,7 @@
 <% flash.each do |type, message| %>
-  <div class="alert <%= css_class_for_flash(type: type) %>" role="alert">
-    <%= message %>
+  <div class="d-flex justify-content-center align-items-center mt-3">
+    <div class="alert <%= css_class_for_flash(type: type) %> text-center p-3" role="alert">
+      <%= message %>
+    </div>
   </div>
 <% end %>

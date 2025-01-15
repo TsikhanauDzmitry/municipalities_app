@@ -17,7 +17,17 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="d-flex flex-column min-vh-100">
+    <%= render partial: 'layouts/partials/header' %>
+
+    <%= render_flash_messages %>
+
+    <main class="d-flex flex-grow-1 align-items-center justify-content-center">
+      <div class="content-container">
+        <%= yield %>
+      </div>
+    </main>
+
+    <%= render partial: 'layouts/partials/footer' %>
   </body>
 </html>
