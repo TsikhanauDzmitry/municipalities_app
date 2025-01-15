@@ -36,7 +36,14 @@ gem 'bootsnap', require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+gem 'active_storage_validations', '~> 1.1', '>= 1.1.4'
+gem 'image_processing', '~> 1.2'
+gem 'mini_magick', '~> 4.9'
+
 group :development, :test do
+  # [https://rubygems.org/gems/factory_bot_rails]
+  gem 'factory_bot_rails', '~> 6.4', '>= 6.4.3'
+
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri windows], require: 'debug/prelude'
 
@@ -45,16 +52,44 @@ group :development, :test do
 
   # rubocop [https://github.com/rubocop/rubocop]
   gem 'rubocop', require: false
-  gem 'rubocop-rails', require: false
-  gem 'rubocop-rspec', require: false
   gem 'rubocop-capybara', require: false
   gem 'rubocop-performance', require: false
+  gem 'rubocop-rails', require: false
   gem 'rubocop-rails-omakase', require: false
+  gem 'rubocop-rspec', require: false
 
   gem 'dotenv-rails'
+
+  # [https://github.com/teamcapybara/capybara]
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'webdrivers'
+
+  # [https://github.com/rspec/rspec-rails/tree/6-1-maintenance]
+  gem 'rspec-rails', '~> 6.1.0'
+
+  # [https://rubygems.org/gems/pry/versions/0.14.1]
+  gem 'pry', '~> 0.14.1'
+
+  # [https://rubygems.org/gems/faker/versions/3.4.2]
+  gem 'faker', '~> 3.4', '>= 3.4.2'
 end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'web-console'
+end
+
+group :test do
+  # [https://rubygems.org/gems/database_cleaner/versions/2.0.2]
+  gem 'database_cleaner', '~> 2.0', '>= 2.0.2'
+
+  # [https://github.com/thoughtbot/shoulda-matchers]
+  gem 'shoulda-matchers', '~> 6.0'
+
+  # [https://rubygems.org/gems/simplecov]
+  gem 'simplecov', '~> 0.22.0'
+
+  # [https://github.com/rails/rails-controller-testing]
+  gem 'rails-controller-testing'
 end
