@@ -1,5 +1,6 @@
 <% if current_user %>
   <h1>Hi <%= current_user.email %></h1>
+  <h2><%= link_to 'Log Out', destroy_user_session_path, class: 'dropdown-item' %></h2>
 <% else %>
   <h1>Welcome to Municipalities App</h1>
 <% end %>

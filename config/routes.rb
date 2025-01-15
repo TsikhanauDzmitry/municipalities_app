@@ -18,7 +18,10 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }, path: '', path_names: {
     sign_in: 'login',
-    sign_out: 'logout',
     sign_up: 'signup'
   }
+  devise_scope(:user) { get '/sign_out' => 'devise/sessions#destroy' }
+
+  # Rotes for ActiveAdmin Dashboard
+  ActiveAdmin.routes(self)
 end

@@ -42,6 +42,18 @@ gem 'active_storage_validations', '~> 1.1', '>= 1.1.4'
 gem 'image_processing', '~> 1.2'
 gem 'mini_magick', '~> 4.9'
 
+# [https://github.com/kaminari/kaminari]
+gem 'kaminari'
+
+# [https://activeadmin.info/]
+gem 'activeadmin'
+
+# [https://github.com/cprodhomme/arctic_admin]
+gem 'arctic_admin'
+
+# [https://github.com/sass/sassc-rails]
+gem 'sassc-rails'
+
 group :development, :test do
   # [https://rubygems.org/gems/factory_bot_rails]
   gem 'factory_bot_rails', '~> 6.4', '>= 6.4.3'
