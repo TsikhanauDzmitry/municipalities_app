@@ -54,6 +54,9 @@ gem 'arctic_admin'
 # [https://github.com/sass/sassc-rails]
 gem 'sassc-rails'
 
+gem 'bootstrap', '~> 5.3.3'
+gem 'jquery-rails'
+
 group :development, :test do
   # [https://rubygems.org/gems/factory_bot_rails]
   gem 'factory_bot_rails', '~> 6.4', '>= 6.4.3'
