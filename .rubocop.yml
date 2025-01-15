@@ -48,3 +48,7 @@ Layout/EndOfLine:
 
 Rails/HasAndBelongsToMany:
   Enabled: false
+
+Rails/LexicallyScopedActionFilter:
+  Exclude:
+    - "app/controllers/users/registrations_controller.rb"
