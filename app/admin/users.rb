@@ -13,6 +13,7 @@ ActiveAdmin.register User do
     id_column
     column :email
     column :role
+    column(:full_name) { |user| "#{user.profile.first_name} #{user.profile.last_name}" }
     column :created_at
     actions
   end
@@ -20,9 +21,11 @@ ActiveAdmin.register User do
   show do
     attributes_table do
       row :email
+      row :role
+      row(:full_name) { |user| "#{user.profile.first_name} #{user.profile.last_name}" }
+      row(:address) { |user| "#{user.address.country}, #{user.address.city}, #{user.address.street}" }
       row :created_at
       row :updated_at
-      row :role
     end
   end
 
