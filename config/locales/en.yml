@@ -28,4 +28,6 @@
 #       enabled: "ON"
 
 en:
-  hello: "Hello world"
+  controller:
+    flash_messages:
+      non_admin: You are not admin user!
