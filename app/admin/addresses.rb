@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ActiveAdmin.register Address do
   actions :all
   permit_params :user_id, :country, :city, :state, :street, :zip_code

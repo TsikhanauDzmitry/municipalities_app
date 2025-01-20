@@ -12,11 +12,6 @@ Capybara.javascript_driver = :selenium_chrome_headless
 # To get a nicer looking page, configure Capybara with:
 Capybara.asset_host = 'http://localhost:3000'
 
-# Override the basename for screenshots with the spec example full description
-Capybara::Screenshot.register_filename_prefix_formatter(:rspec) do |example|
-  "screenshot_#{example.full_description.parameterize}"
-end
-
 RSpec.configure do |config|
   config.before(:each, :js) do
     Capybara.page.current_window.resize_to(1024, 768)

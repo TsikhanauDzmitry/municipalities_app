@@ -6,16 +6,8 @@ FactoryBot.define do
     password { Faker::Internet.password(min_length: 8) }
     password_confirmation { password }
 
-    trait(:admin) do
-      role { :admin }
-    end
-
-    trait(:resident) do
-      role { :resident }
-    end
-
-    trait(:employee) do
-      role { :employee }
-    end
+    trait(:admin) { role { :admin } }
+    trait(:resident) { role { :resident } }
+    trait(:employee) { role { :employee } }
   end
 end
