@@ -1,6 +1,17 @@
-<% if current_user %>
-  <h1>Hi <%= current_user.email %></h1>
-  <h2><%= link_to 'Log Out', destroy_user_session_path, class: 'dropdown-item' %></h2>
-<% else %>
-  <h1>Welcome to Municipalities App</h1>
-<% end %>
+<div class="container d-flex my-5">
+  <div class="row w-100">
+    <div class="col-md-6 d-flex flex-column justify-content-center">
+      <h1>Welcome to Municipalities-App</h1>
+      <p class="text-secondary">
+        In this application, you can create Issues appeals that will later be reviewed by your municipality. Additional functionality will be implemented a little later!
+      </p>
+      <p class="text-secondary">
+        We are happy to see you!
+      </p>
+    </div>
+
+    <div class="col-md-6 d-flex justify-content-center">
+      <%= image_tag 'home_image.jpg', alt: 'Municipalities', class: 'img-fluid rounded' %>
+    </div>
+  </div>
+</div>

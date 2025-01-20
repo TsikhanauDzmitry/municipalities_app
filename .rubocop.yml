@@ -36,10 +36,12 @@ Metrics/ModuleLength:
 Metrics/MethodLength:
   Exclude:
     - "db/migrate/*"
+    - "app/models/ability.rb"
 
 Metrics/AbcSize:
   Exclude:
     - "db/migrate/*"
+    - "app/controllers/issues_controller.rb"
 
 Style/HashSyntax:
   EnforcedShorthandSyntax: either
@@ -53,3 +55,9 @@ Rails/HasAndBelongsToMany:
 Rails/LexicallyScopedActionFilter:
   Exclude:
     - "app/controllers/users/registrations_controller.rb"
+
+Rails/HasManyOrHasOneDependent:
+  Enabled: false
+
+Rails/InverseOf:
+  Enabled: false
