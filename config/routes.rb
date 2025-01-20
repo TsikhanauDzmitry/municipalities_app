@@ -24,4 +24,12 @@ Rails.application.routes.draw do
 
   # Rotes for ActiveAdmin Dashboard
   ActiveAdmin.routes(self)
+
+  resources :issues do
+    member do
+      patch :assign_to_self
+      patch :update_status
+      patch :update_priority
+    end
+  end
 end

@@ -28,6 +28,16 @@
 #       enabled: "ON"
 
 en:
+  issues:
+    controller:
+      created: Issue was successfully created!
+      updated: Issue was successfully updated!
+      deleted: Issue was successfully deleted!
+      not_responsibility: You don't have permission to perform this action.
+      update_success: "%{field} was successfully updated."
+      update_failure: "Failed to update %{field}."
+      assigned: You have successfully taken responsibility for this issue.
   controller:
     flash_messages:
       non_admin: You are not admin user!
+      smth_went_wrong: Something went wrong... Please try again.
