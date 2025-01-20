@@ -1,0 +1,30 @@
+<div class="card mb-4 shadow">
+  <div class="card-body">
+    <%= form_with url: issues_path, method: :get, local: true, class: 'row g-3' do |f| %>
+      <div class="col-md-5">
+        <%= f.text_field :query,
+                         value: params[:query],
+                         class: 'form-control',
+                         placeholder: 'Search by title, creator email, or worker email' %>
+      </div>
+
+      <div class="col-md-2">
+        <%= f.select :priority,
+                     Issue.priorities.keys.map { |p| [p.humanize, p] },
+                     { selected: params[:priority], include_blank: 'All priorities' },
+                     class: 'form-select' %>
+      </div>
+
+      <div class="col-md-2">
+        <%= f.select :status,
+                     Issue.statuses.keys.map { |s| [s.humanize, s] },
+                     { selected: params[:status], include_blank: 'All statuses' },
+                     class: 'form-select' %>
+      </div>
+
+      <div class="col-md-3">
+        <%= f.submit 'Apply Filters', class: 'btn btn-dark w-100' %>
+      </div>
+    <% end %>
+  </div>
+</div>

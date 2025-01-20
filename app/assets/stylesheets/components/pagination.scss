@@ -1,0 +1,49 @@
+$color_1: #212529;
+$color_2: #212529;
+$color_3: white;
+$background-color_1: white;
+$background-color_2: #eee;
+$background-color_3: #212529;
+$border-color_1: #ddd;
+
+.pagination {
+  >li {
+    >a {
+      background-color: $background-color_1;
+      color: $color_1;
+      &:focus {
+        color: $color_2;
+        background-color: $background-color_2;
+        border-color: $border-color_1;
+      }
+      &:hover {
+        color: $color_2;
+        background-color: $background-color_2;
+        border-color: $border-color_1;
+      }
+    }
+    >span {
+      &:focus {
+        color: $color_2;
+        background-color: $background-color_2;
+        border-color: $border-color_1;
+      }
+      &:hover {
+        color: $color_2;
+        background-color: $background-color_2;
+        border-color: $border-color_1;
+      }
+    }
+  }
+  >.active {
+    >a {
+      color: $color_3;
+      background-color: $background-color_3 !important;
+      border: solid 1px #5A4181 !important;
+      &:hover {
+        background-color: $background-color_3 !important;
+        border: solid 1px #5A4181;
+      }
+    }
+  }
+}
