@@ -8,6 +8,9 @@ class User < ApplicationRecord
   has_one :profile, dependent: :destroy
   has_one :address, dependent: :destroy
 
+  has_many :worked_issues, class_name: 'Issue', foreign_key: :worker_id
+  has_many :opened_issues, class_name: 'Issue', foreign_key: :created_by
+
   accepts_nested_attributes_for :profile
   accepts_nested_attributes_for :address
 
