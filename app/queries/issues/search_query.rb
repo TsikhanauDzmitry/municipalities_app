@@ -46,7 +46,7 @@ module Issues
 
     def apply_sorting(relation)
       sort_column = ALLOWED_SORT_COLUMNS.include?(@sorting[:column]) ? @sorting[:column] : 'created_at'
-      sort_direction = ALLOWED_SORT_DIRECTIONS.include?(@sorting[:direction]) ? @sorting[:direction] : 'asc'
+      sort_direction = ALLOWED_SORT_DIRECTIONS.include?(@sorting[:direction]) ? @sorting[:direction] : 'desc'
 
       relation.order(sort_column => sort_direction)
     end
