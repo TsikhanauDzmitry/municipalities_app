@@ -1,0 +1,172 @@
+<div class="container mt-1">
+  <header>
+    <h1 class="text-center">Municipal To-Do Application</h1>
+    <p class="text-center text-muted">A modern task management system tailored for municipal services</p>
+  </header>
+
+  <section class="mb-4">
+    <h2>Project Concept</h2>
+    <p>
+      This application integrates the functionality of a classic To-Do app with features designed to address municipal-level challenges. It serves as a platform for city residents to submit requests for resolving various issues and for municipal workers to manage and execute these tasks efficiently.
+    </p>
+  </section>
+
+  <section class="mb-4">
+    <h2>Application Functionality</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <h3>For Residents</h3>
+        <ul>
+          <li>Register and create an account</li>
+          <li>Submit requests with title, description, and images</li>
+          <li>Track the statuses of submitted requests</li>
+          <li>View a history of created requests</li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h3>For Employees</h3>
+        <ul>
+          <li>View all submitted requests</li>
+          <li>Change request statuses</li>
+          <li>Set task priorities (low, medium, high)</li>
+          <li>Assign tasks to themselves</li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h3>For Administrators</h3>
+        <ul>
+          <li>Access all application data</li>
+          <li>Manage users, requests, and database objects</li>
+          <li>Oversee the entire process via an admin panel</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-4">
+    <h2>Development of the Idea</h2>
+    <p>
+      Initially, the application was designed as a simple To-Do list. Over time, it was adapted to meet the specific needs of municipal organizations. The result is a service that combines personal task management with advanced features for municipal use.
+    </p>
+    <p>
+      The application provides an intuitive interface for different user roles:
+    </p>
+    <ul>
+      <li><strong>Residents:</strong> Focus on creating and tracking their requests.</li>
+      <li><strong>Municipal Workers (Employees):</strong> Manage and execute tasks efficiently.</li>
+      <li><strong>Administrators:</strong> Oversee processes through a robust admin panel.</li>
+    </ul>
+  </section>
+
+  <section class="mb-5">
+    <h2 class="mb-3">Project Overview</h2>
+    <p>The task was to build a to-do application that satisfies the minimum functionality requirements, including viewing, filtering, creating, editing, deleting, and completing to-do items. Instead of implementing a basic to-do application, I developed a more advanced <strong>Issue Management System</strong>, which not only meets but significantly enhances the required functionality.</p>
+    <p>The Issue Management System is designed for use in a municipal context, allowing citizens to submit requests (issues) and enabling employees and administrators to manage and resolve them efficiently.</p>
+  </section>
+
+  <section class="mb-5">
+    <h2 class="mb-3">Fulfilled Requirements</h2>
+
+    <div class="mb-3">
+      <h4 class="mb-2">1. View a List of To-Do Items</h4>
+      <p>Users can view a comprehensive list of <strong>issues</strong>, which are enhanced to-do items with additional attributes such as status and priority. The list can be filtered by:</p>
+      <ul>
+        <li><strong>Status:</strong> Users can filter issues by <em>open</em>, <em>in-progress</em>, <em>closed</em>, or view all.</li>
+        <li><strong>Priority:</strong> Employees and administrators can prioritize issues based on urgency.</li>
+      </ul>
+      <p>Users can also search issues by <strong>title</strong> or associated users (creator or assigned worker), enabling intuitive navigation.</p>
+    </div>
+
+    <div class="mb-3">
+      <h4 class="mb-2">2. Create a New To-Do Item</h4>
+      <p>Users, particularly residents, can create new issues with a title, description, and optional image attachment. Employees and administrators can create issues with additional options to set priority and status during the creation process.</p>
+    </div>
+
+    <div class="mb-3">
+      <h4 class="mb-2">3. Edit a To-Do Item</h4>
+      <p>Issues can be edited to update critical attributes:</p>
+      <ul>
+        <li>Residents can modify the title, description, and attached images for issues they have created.</li>
+        <li>Employees and administrators can update additional fields, such as status, priority, and assign issues to specific workers.</li>
+      </ul>
+    </div>
+
+    <div class="mb-3">
+      <h4 class="mb-2">4. Delete a To-Do Item</h4>
+      <p>Employees and administrators can delete issues when they are resolved or no longer relevant, maintaining a clean and focused issue list.</p>
+    </div>
+
+    <div class="mb-3">
+      <h4 class="mb-2">5. Complete a To-Do Item</h4>
+      <p>Issues can be marked as closed by updating their status. Employees can take ownership of issues by assigning them to themselves, updating the issue’s status as they work on it, and marking it as completed when resolved.</p>
+    </div>
+  </section>
+
+  <section class="mb-5">
+    <h2 class="mb-3">Enhancements Beyond the Minimum Requirements</h2>
+
+    <div class="mb-3">
+      <h4 class="mb-2">1. Role-Based Access Control</h4>
+      <p>Users are categorized into three roles:</p>
+      <ul>
+        <li><strong>Residents:</strong> Create and view the issues they submit.</li>
+        <li><strong>Employees:</strong> Manage issues by updating their status, priority, and assigning themselves tasks.</li>
+        <li><strong>Administrators:</strong> Have full control over all issues and access to an admin panel for managing system data.</li>
+      </ul>
+    </div>
+
+    <div class="mb-3">
+      <h4 class="mb-2">2. Dynamic Filtering and Sorting</h4>
+      <p>Advanced filtering options allow users to refine issue lists based on their status and priority. Sorting options enable users to order issues by title, creation date, status, or priority.</p>
+    </div>
+
+    <div class="mb-3">
+      <h4 class="mb-2">3. Pagination</h4>
+      <p>The issue list is paginated using <strong>Kaminari</strong>, ensuring efficient performance and a clean user interface, even with a large number of issues.</p>
+    </div>
+
+    <div class="mb-3">
+      <h4 class="mb-2">4. Clean and Responsive UI</h4>
+      <p>The application uses Bootstrap for styling, providing a responsive and visually appealing interface. Buttons for actions such as "View," "Edit," and "Delete" are clearly styled and easy to use.</p>
+    </div>
+
+    <div class="mb-3">
+      <h4 class="mb-2">5. Search Functionality</h4>
+      <p>A robust search bar allows users to find issues based on title or the email of the creator or assigned worker, offering a highly user-friendly experience.</p>
+    </div>
+  </section>
+
+  <section class="mb-5">
+    <h2 class="mb-3">Conclusion</h2>
+    <p>This enhanced implementation transforms a standard to-do application into a robust Issue Management System tailored for municipal services. It not only fulfills all specified requirements but also introduces additional features to improve usability, scalability, and relevance for real-world use cases.</p>
+    <p>The system demonstrates a forward-thinking approach to handling tasks and requests, providing both citizens and municipal employees with a powerful tool for efficient issue resolution.</p>
+  </section>
+
+  <section>
+    <h2>Access to the Application</h2>
+    <p>
+      To demonstrate the application's functionality, several types of user accounts have been created. You can log in using the following credentials:
+    </p>
+    <div class="row">
+      <div class="col-md-4">
+        <h3>Resident</h3>
+        <p>Register to create an account and access the resident features.</p>
+      </div>
+      <div class="col-md-4">
+        <h3>Employee</h3>
+        <p>Manages statuses, priorities, and assignments of tasks.</p>
+        <p>
+          <strong>email:</strong> <i>employee@ex.com</i><br>
+          <strong>password:</strong> <i>emp-password</i>
+        </p>
+      </div>
+      <div class="col-md-4">
+        <h3>Administrator</h3>
+        <p>Has full access to all application data and features through the admin panel.</p>
+        <p><strong>email:</strong> <i>admin@ex.com</i><br>
+          <strong>password:</strong> <i>admin-password</i>
+        </p>
+      </div>
+    </div>
+  </section>
+</div>
