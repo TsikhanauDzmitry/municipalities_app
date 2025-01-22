@@ -58,6 +58,9 @@ gem 'sassc-rails'
 gem 'bootstrap', '~> 5.3.3'
 gem 'jquery-rails'
 
+# [https://rubygems.org/gems/faker/versions/3.4.2]
+gem 'faker', '~> 3.4', '>= 3.4.2'
+
 group :development, :test do
   # [https://rubygems.org/gems/factory_bot_rails]
   gem 'factory_bot_rails', '~> 6.4', '>= 6.4.3'
@@ -88,9 +91,6 @@ group :development, :test do
 
   # [https://rubygems.org/gems/pry/versions/0.14.1]
   gem 'pry', '~> 0.14.1'
-
-  # [https://rubygems.org/gems/faker/versions/3.4.2]
-  gem 'faker', '~> 3.4', '>= 3.4.2'
 end
 
 group :development do

@@ -9,16 +9,16 @@
       </div>
 
       <div class="col-md-2">
-        <%= f.select :priority,
-                     Issue.priorities.keys.map { |p| [p.humanize, p] },
-                     { selected: params[:priority], include_blank: 'All priorities' },
+        <%= f.select :status,
+                     Issue.statuses.keys.map { |s| [s.humanize, s] },
+                     { selected: params[:status], include_blank: 'All statuses' },
                      class: 'form-select' %>
       </div>
 
       <div class="col-md-2">
-        <%= f.select :status,
-                     Issue.statuses.keys.map { |s| [s.humanize, s] },
-                     { selected: params[:status], include_blank: 'All statuses' },
+        <%= f.select :priority,
+                     Issue.priorities.keys.map { |p| [p.humanize, p] },
+                     { selected: params[:priority], include_blank: 'All priorities' },
                      class: 'form-select' %>
       </div>
 

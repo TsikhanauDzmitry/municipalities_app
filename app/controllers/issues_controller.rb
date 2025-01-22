@@ -5,7 +5,7 @@ class IssuesController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @issues = Issues::SearchService.new(
+    @issues = Issues::SearchQuery.new(
       user: current_user,
       query: params[:query],
       filtering: { status: params[:status], priority: params[:priority] },
@@ -49,7 +49,7 @@ class IssuesController < ApplicationController
     result = Issues::UpdateService.new(
       issue: @issue,
       field_name: :status,
-      data: params[:issue][:status],
+      data: issue_params_admin_or_employee[:status],
       current_user:
     ).call
 
@@ -60,7 +60,7 @@ class IssuesController < ApplicationController
     result = Issues::UpdateService.new(
       issue: @issue,
       field_name: :priority,
-      data: params[:issue][:priority],
+      data: issue_params_admin_or_employee[:priority],
       current_user:
     ).call
 
