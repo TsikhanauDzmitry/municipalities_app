@@ -24,7 +24,7 @@ ActiveAdmin.register Issue do
 
   show do
     attributes_table do
-      row(:image) { |issue| image_tag(issue.image) if issue.image.attached? }
+      row(:image) { |issue| image_tag(issue.image.variant(:preview)) if issue.image.attached? }
       row :title
       row :description
       row :status

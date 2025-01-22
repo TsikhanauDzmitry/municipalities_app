@@ -1,25 +1,20 @@
 <div class="container card flex-md-row mb-4 box-shadow h-md-250">
   <div class="card-body d-flex flex-column align-items-start">
-    <h1 class="mb-0"><%= @issue.title %></h1>
-    <div class="mb-1 text-muted"><%= @issue.created_at.strftime('%Y-%m-%d %H:%M') %></div>
-    <p class="card-text mb-auto"><%= @issue.description %></p>
-    <div class="mt-5 d-flex gap-2">
+    <h1 class="mb-3"><%= @issue.title %></h1>
+    <div class="mb-1 text-muted">Created At: <%= @issue.created_time%></div>
+    <div class="mb-1 text-muted">Created By: <%= @issue.name_of(user: @issue.creator) %></div>
+    <% if can?(:assign_to_self, @issue) %>
+      <div class="mb-1 text-muted">Worker: <%= @issue.name_of(user: @issue.worker) %></div>
+    <% end %>
+    <p class="card-text mb-auto mt-2"><%= @issue.description %></p>
+    <div class="mt-5 d-flex gap-2 issue-button-group">
       <% if can?(:assign_to_self, @issue) %>
-        <%= button_to 'Assign to Myself', assign_to_self_issue_path(@issue), method: :put, class: 'btn btn-outline-dark' %>
+        <%= button_to 'Assign to Myself', assign_to_self_issue_path(@issue), method: :put, class: 'btn btn-outline-dark issue-btn' %>
       <% end %>
-
-      <% if can?(:update, @issue) %>
-        <%= link_to 'Edit', edit_issue_path(@issue), class: 'btn btn-outline-dark' %>
-      <% end %>
-
-      <% if can?(:destroy, @issue) %>
-        <%= link_to 'Delete', issue_path(@issue), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-dark' %>
-      <% end %>
-
-      <%= link_to 'Back', issues_path, class: 'btn btn-outline-dark' %>
+      <%= link_to 'Edit', edit_issue_path(@issue), class: 'btn btn-outline-dark issue-btn' if can?(:update, @issue) %>
+      <%= button_to 'Delete', issue_path(@issue), method: :delete, class: 'btn btn-dark issue-btn' if can?(:destroy, @issue) %>
+      <%= link_to 'Back', issues_path, class: 'btn btn-outline-dark issue-btn' %>
     </div>
   </div>
-  <% if @issue.image.attached? %>
-    <%= image_tag @issue.image, class: 'card-img-right flex-auto d-none d-md-block img-fluid my-2' %>
-  <% end %>
+  <%= image_tag @issue.display_image_path, class: 'card-img-right flex-auto d-none d-md-block img-fluid my-2' %>
 </div>

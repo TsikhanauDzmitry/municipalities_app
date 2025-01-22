@@ -37,18 +37,11 @@
           </td>
         <% end %>
         <td>
-          <%= link_to 'View', issue_path(issue), class: 'btn btn-sm btn-outline-dark' %>
-
-          <% if can?(:update, issue) %>
-            <%= link_to 'Edit', edit_issue_path(issue), class: 'btn btn-outline-dark btn-sm' %>
-          <% end %>
-
-          <% if can?(:destroy, issue) %>
-            <%= link_to 'Delete', issue_path(issue),
-                        method: :delete,
-                        data: { confirm: 'Are you sure?' },
-                        class: 'btn btn-sm btn-dark' %>
-          <% end %>
+          <div class="d-flex justify-content-center align-items-center gap-2">
+            <%= link_to 'View', issue_path(issue), class: 'btn btn-sm btn-outline-dark' %>
+            <%= link_to 'Edit', edit_issue_path(issue), class: 'btn btn-sm btn-outline-dark' if can?(:update, issue) %>
+            <%= button_to 'Delete', issue_path(issue), method: :delete, class: 'btn btn-sm btn-dark' if can?(:destroy, issue) %>
+          </div>
         </td>
       </tr>
     <% end %>

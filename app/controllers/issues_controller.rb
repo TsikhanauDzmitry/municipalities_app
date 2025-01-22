@@ -13,7 +13,9 @@ class IssuesController < ApplicationController
     ).call.page(params[:page]).per(params[:per_page])
   end
 
-  def show; end
+  def show
+    @issue = IssuePresenter.new(@issue)
+  end
 
   def new; end
 
