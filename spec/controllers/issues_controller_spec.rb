@@ -35,7 +35,7 @@ RSpec.describe IssuesController, type: :controller do
       end
 
       it 'assigns @issues' do
-        expect(assigns(:issues)).to eq(issues)
+        expect(assigns(:issues)).to eq(issues.reverse)
       end
     end
   end
