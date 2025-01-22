@@ -10,13 +10,11 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-return unless Rails.env.development?
-
 users = [
-  { email: 'admin@example.com', password: 'password', role: :admin },
-  { email: 'employee1@example.com', password: 'password', role: :employee },
-  { email: 'employee2@example.com', password: 'password', role: :employee },
-  { email: 'employee3@example.com', password: 'password', role: :employee }
+  { email: 'admin@ex.com', password: 'admin-password', first_name: 'Admin', last_name: 'Main', role: :admin },
+  { email: 'employee@ex.com', password: 'emp-password', first_name: 'Municipal', last_name: 'Worker', role: :employee },
+  { email: 'emp1@ex.com', password: 'emp-password', first_name: 'Employee', last_name: 'First', role: :employee },
+  { email: 'emp2@ex.com', password: 'emp-password', first_name: 'Employee', last_name: 'Second', role: :employee }
 ]
 
 employees = []
@@ -28,7 +26,7 @@ users.each do |user_attrs|
     u.role = user_attrs[:role]
   end
 
-  Profile.create!(user:, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
+  Profile.create!(user:, first_name: user_attrs[:first_name], last_name: user_attrs[:last_name])
 
   Address.create!(
     user:,
@@ -38,7 +36,7 @@ users.each do |user_attrs|
     zip_code: Faker::Address.zip_code
   )
 
-  3.times do
+  2.times do
     Issue.create!(
       title: Faker::Lorem.sentence,
       description: Faker::Lorem.paragraph,
@@ -52,7 +50,7 @@ users.each do |user_attrs|
 end
 
 10.times do |i|
-  resident = User.find_or_create_by!(email: "resident#{i + 1}@example.com") { |u| u.password = 'password' }
+  resident = User.find_or_create_by!(email: "resident_#{i + 1}@example.com") { |u| u.password = 'password' }
 
   Profile.create!(user: resident, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
 
@@ -73,7 +71,7 @@ end
       worker_id: employees.sample[:id],
       created_by: resident.id
     ) do |issue|
-      issue_image = URI.parse(Faker::LoremFlickr.image(size: '300x300', search_terms: %w[sports fitness])).open
+      issue_image = URI.parse(Faker::LoremFlickr.image(size: '300x300')).open
       issue.image.attach(io: issue_image, filename: "#{issue_image}_faker.jpg", content_type: 'image/jpg')
     end
   end
