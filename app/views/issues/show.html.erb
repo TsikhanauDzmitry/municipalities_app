@@ -9,7 +9,7 @@
     <p class="card-text mb-auto mt-2"><%= @issue.description %></p>
     <div class="mt-5 d-flex gap-2 issue-button-group">
       <% if can?(:assign_to_self, @issue) %>
-        <%= button_to 'Assign to Myself', assign_to_self_issue_path(@issue), method: :put, class: 'btn btn-outline-dark issue-btn' %>
+        <%= button_to 'Assign to Myself', assign_to_self_issue_path(@issue), method: :patch, class: 'btn btn-outline-dark issue-btn' %>
       <% end %>
       <%= link_to 'Edit', edit_issue_path(@issue), class: 'btn btn-outline-dark issue-btn' if can?(:update, @issue) %>
       <%= button_to 'Delete', issue_path(@issue), method: :delete, class: 'btn btn-dark issue-btn' if can?(:destroy, @issue) %>
