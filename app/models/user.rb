@@ -15,7 +15,7 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :address
 
   validates :email, presence: true, uniqueness: true
-  validates :role, :password, presence: true
+  validates :role, presence: true
 
   scope :managers, -> { where.not(role: :resident) }
 end
